@@ -34,6 +34,9 @@
 //   );
 // }
 // app/layout.tsx
+// app/layout.tsx
+
+
 import './globals.css'; // Import global styles
 import Navbar from '../components/Navbar';
 

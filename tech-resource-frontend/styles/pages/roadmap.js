@@ -1,6 +1,6 @@
 // pages/roadmap.js
 import { useState, useEffect } from 'react';
-import ResourceCard from '../components/ResourceCard';
+import ResourceCard from '../../components/ResourceCard';
 
 const Roadmap = () => {
   const [resources, setResources] = useState([]);

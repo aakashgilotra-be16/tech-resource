@@ -1,6 +1,6 @@
 // components/Navbar.js
-import { FaHome, FaRoad, FaUsers, FaSearch } from 'react-icons/fa';
-
+import { FaHome, FaRoad, FaUsers, FaSearch, FaSignInAlt } from 'react-icons/fa';
+import Link from 'next/link';
 const Navbar = () => {
   return (
     <nav className="bg-black py-4 sticky top-0 z-50">
@@ -27,6 +27,11 @@ const Navbar = () => {
           <li>
             <a href="#" className="hover:text-orange-500 flex items-center">
               <FaSearch className="mr-2" /> Explore
+            </a>
+          </li>
+          <li>
+            <a href="/login" className="hover:text-orange-500 flex items-center">
+              <FaSignInAlt className="mr-2" /> Login
             </a>
           </li>
         </ul>
