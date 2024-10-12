@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 const HeroSection = ({ scrollToOfferings }) => {
   return (
     <div className="bg-black text-white text-center py-24 min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-5xl font-bold mb-4">
+      <h1 className="text-3xl md:text-5xl font-bold mb-4">
         Welcome to <span className="text-orange-500">TechHub</span>
       </h1>
       <p className="text-lg text-gray-400 mb-8">
