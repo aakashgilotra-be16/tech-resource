@@ -1,7 +1,7 @@
 // components/AiExplanationSection.js
 const AiExplanationSection = () => {
     return (
-      <section className="bg-gray-900 text-white py-20">
+      <section className="bg-gray-900 text-white py-12 py-20">
         <h2 className="text-center text-4xl font-bold text-orange-500 mb-10">AI-Powered Resource Management</h2>
         <div className="container mx-auto text-center px-6">
           <p className="text-lg text-gray-400 mb-8">

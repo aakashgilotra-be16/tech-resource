@@ -113,10 +113,19 @@
 // app/page.tsx
 'use client';
 
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       userCount: 10000,
+//       resourceCount: 500,
+//     },
+//   };
+// }
 import HeroSection from '../components/HeroSection';
 import OfferingsSection from '../components/OfferingsSection';
 import StatisticsSection from '../components/StatisticsSection';
 import AiExplanationSection from '../components/AiExplanationSection';
+
 
 export default function Home() {
   const scrollToOfferings = () => {
@@ -129,6 +138,7 @@ export default function Home() {
       <OfferingsSection />
       <StatisticsSection />
       <AiExplanationSection />
+      {/* <StatisticsSection userCount={userCount} resourceCount={resourceCount} /> */}
     </main>
   );
 }
