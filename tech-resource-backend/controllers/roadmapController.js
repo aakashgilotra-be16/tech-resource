@@ -1,7 +1,7 @@
 // controllers/roadmapController.js
 
 const Resource = require('../models/resource');
-
+const Roadmap = require('../models/Roadmap');
 // Placeholder for AI/ML roadmap generation logic
 const generateRoadmap = async (req, res) => {
   try {
@@ -23,5 +23,26 @@ const generateRoadmap = async (req, res) => {
     res.status(500).json({ error: 'Error generating roadmap' });
   }
 };
+// Get all roadmaps
+const getAllRoadmaps = async (req, res) => {
+  try {
+    const roadmaps = await Roadmap.find();
+    res.status(200).json({ roadmaps });
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching roadmaps' });
+  }
+};
 
-module.exports = { generateRoadmap };
+// Create a new roadmap
+const createRoadmap = async (req, res) => {
+  try {
+    const { title, summary, url } = req.body;
+    const newRoadmap = new Roadmap({ title, summary, url });
+    await newRoadmap.save();
+    res.status(201).json({ roadmap: newRoadmap });
+  } catch (error) {
+    res.status(500).json({ error: 'Error creating roadmap' });
+  }
+};
+
+module.exports = { generateRoadmap, getAllRoadmaps, createRoadmap };

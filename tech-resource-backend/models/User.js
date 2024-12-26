@@ -1,6 +1,7 @@
 // models/User.js
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const connectDB = require('../config/mongoDB');
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -28,4 +29,16 @@ userSchema.pre('save', async function (next) {
 });
 
 const User = mongoose.model('User', userSchema);
+
+// Connect to MongoDB Atlas and create collections
+connectDB().then(() => {
+  User.createCollection().then(() => {
+    console.log('User collection created');
+  }).catch(err => {
+    console.error('Error creating User collection:', err);
+  });
+}).catch(err => {
+  console.error('Error connecting to MongoDB Atlas:', err);
+});
+
 module.exports = User;

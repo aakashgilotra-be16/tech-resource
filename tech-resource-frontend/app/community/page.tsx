@@ -4,8 +4,13 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';  // Import useRouter from 'next/navigation' in app directory
 
+interface Post {
+  username: string;
+  content: string;
+}
+
 export default function CommunityPage() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [newPost, setNewPost] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
